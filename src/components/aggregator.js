@@ -8,6 +8,13 @@ class Aggregator extends Component {
           {this.props.account.native_balance.currency === 'GBP' ? '£' : '$'}
           {this.props.account.native_balance.amount}
         </div>
+        <div className="buys">
+          <ul className="buys__list">
+            {this.props.buys.map(buy => (
+              <li key={buy.id}>{buy.total.amount}</li>
+            ))}
+          </ul>          
+        </div>
       </div>
     );
   }

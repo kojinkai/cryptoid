@@ -18,6 +18,10 @@ class CoinbaseApiService {
   getAccount() {
     return this.get('account');
   }
+
+  getBuys() {
+    return this.get('buys');
+  }
 }
 
 const coinbaseApi = new CoinbaseApiService();

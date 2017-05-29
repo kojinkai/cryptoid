@@ -8,12 +8,13 @@ class App extends Component {
     super(props);
 
     this.state = {
-      data: {
+      account: {
         native_balance: {
           amount: 0.00,
           currency: 'GBP'
         }
-      }
+      },
+      buys: []
     };
   }
 
@@ -23,7 +24,7 @@ class App extends Component {
         <div className="App-header">
           <h2>Welcome to Cryptoid</h2>
         </div>
-        <Aggregator account={this.state.data}/>
+        <Aggregator account={this.state.account} buys={this.state.buys}/>
       </div>
     );
   }
@@ -33,8 +34,15 @@ class App extends Component {
       .then(response => response.json())
       .then(data => {
         this.setState({
-          data: data.data,
-          loaded: true
+          account: data.data
+        });
+      });
+
+    coinbaseApi.getBuys()
+      .then(response => response.json())
+      .then(data => {
+        this.setState({
+          buys: data.data
         });
       });
   }
