@@ -20,14 +20,11 @@ class Aggregator extends Component {
     coinbaseApi.getAccount()
       .then(response => response.json())
       .then(data => {
-        console.log('data is: ', data.data.native_balance.amount);
-
         this.setState({
           data: data.data,
           loaded: true
         });
       });
-    console.log('did mount son');
   }
 
   render() {
