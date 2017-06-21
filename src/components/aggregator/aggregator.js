@@ -73,14 +73,16 @@ class Aggregator extends Component {
 
     return (
       <section className="aggregator">
-        <h1 className="aggregator__pl-currency">
-          <Indicator inProfit={profitAndLoss.inProfit} className="aggregator__pl-indicator" />
-          <span>{profitAndLoss.pl}</span>
-        </h1>
-        <div className="aggregator__metadata">
-          <span>{profitAndLoss.totalPaid}</span>
-          <span>{profitAndLoss.balanceNow}</span>
-          <span>{profitAndLoss.percentage}</span>
+        <div className="aggregator__container">
+          <h1 className="aggregator__pl-currency">
+            <Indicator inProfit={profitAndLoss.inProfit} className="aggregator__pl-indicator" />
+            <span>{profitAndLoss.pl}</span>
+          </h1>
+          <div className="aggregator__metadata">
+            <span>{profitAndLoss.totalPaid}</span>
+            <span>{profitAndLoss.balanceNow}</span>
+            <span>{profitAndLoss.percentage}</span>
+          </div>
         </div>
       </section>
     );

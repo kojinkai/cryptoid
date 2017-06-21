@@ -1,5 +1,10 @@
+@import 'styles/breakpoints';
 $container: 64rem;
 
 @mixin container {
+  margin: auto;
   max-width: $container;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  width: 100%;
 }

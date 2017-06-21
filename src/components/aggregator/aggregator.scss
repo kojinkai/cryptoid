@@ -1,30 +1,49 @@
 @import 'styles/colors';
-@import 'styles/type';
+@import 'styles/grid';
+@import 'styles/breakpoints';
 
 .aggregator {
+
   background: $royal;
   color: $white;
-  display: flex;
-  flex-direction: column;
-  padding: 1.875rem 1rem .75rem;
-  transition: background .2s ease-in-out;
+
+  &__container {
+
+    @include breakpoint(small) {
+      padding-top: 1.875rem;
+      padding-bottom: .75rem;
+    }
+    @include container;
+
+    display: flex;
+    flex-direction: column;
+    padding-top: 3.375rem;
+    padding-bottom: 1.5625rem;
+  }
 
   &__pl-currency {
-    font-size: 2.25rem;
+    @include breakpoint(small) {
+      font-size: 2.25rem;
+    }
+
+    display: flex;
+    font-size: 3rem;
     font-weight: 600;
+    justify-content: space-between;
     line-height: 1;
     margin: 0 auto 1.5625rem;
-    position: relative;
-    display: flex;
-    justify-content: space-between;
     padding-left: 2rem;
+    position: relative;
     transform: translateX(-.375rem);
   }
 
   &__metadata {
+    @include breakpoint(small) {
+      font-size: .875rem;
+    }
     display: flex;
     justify-content: space-between;
-    font-size: 1rem;
+    font-size: 1.25rem;
     font-weight: 400;
     line-height: 1;
     margin-bottom: 0;

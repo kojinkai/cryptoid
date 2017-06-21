@@ -3,6 +3,7 @@
   $breakpoint-small: "(max-width: 679px)";
   $breakpoint-medium: "screen and (min-width: 680px) and (max-width: 768px)";
   $breakpoint-large: "(min-width: 769px)";
+  $breakpoint-wide: "(min-width: 64rem)";
 
   @if $point == small {
     @media #{$breakpoint-small} { @content; }
@@ -13,5 +14,8 @@
   @else if $point == large {
     @media #{$breakpoint-large}  { @content; }
   }
+  @else if $point == wide {
+    @media #{$breakpoint-wide}  { @content; }
+  }  
 
 }
