@@ -1,0 +1,5 @@
+$container: 64rem;
+
+@mixin container {
+  max-width: $container;
+}
