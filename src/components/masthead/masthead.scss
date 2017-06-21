@@ -1,0 +1,29 @@
+@import 'styles/grid';
+@import 'styles/colors';
+@import 'styles/breakpoints';
+
+.masthead {
+
+  @include breakpoint(small) {
+    justify-content: center;
+  }
+
+  background: $royal;
+  color: $white;
+  display: flex;
+
+  &__container {
+    @include container;
+    @include breakpoint(small) {
+      padding: 1rem;      
+    }
+
+    padding: 1.5625rem;
+  }
+
+  &__logo {
+    @include breakpoint(small) {
+      width: 4.6875rem;
+    }
+  }
+}
