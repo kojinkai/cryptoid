@@ -1,8 +1,8 @@
 @mixin breakpoint($point) {
   
   $breakpoint-small: "(max-width: 679px)";
-  $breakpoint-medium: "screen and (min-width: 680px) and (max-width: 1000px)";
-  $breakpoint-large: "(min-width: 1001px)";
+  $breakpoint-medium: "screen and (min-width: 680px) and (max-width: 768px)";
+  $breakpoint-large: "(min-width: 769px)";
 
   @if $point == small {
     @media #{$breakpoint-small} { @content; }
