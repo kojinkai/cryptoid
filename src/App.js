@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import './App.css';
 import coinbaseApi from './api/api';
-import Aggregator from './components/aggregator/aggregator'
+import Masthead    from './components/masthead/masthead'
+import Aggregator  from './components/aggregator/aggregator'
 
 class App extends Component {
   constructor(props) {
@@ -17,6 +18,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
+        <Masthead />
         <Aggregator 
           account={this.state.account}
           buys={this.state.buys}

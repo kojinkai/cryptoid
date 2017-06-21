@@ -1,0 +1,19 @@
+@import 'styles/grid';
+@import 'styles/colors';
+
+.masthead {
+
+  background: $royal;
+  color: $white;
+  display: flex;
+  justify-content: center;  
+
+  &__container {
+    @include container;
+    padding: 1rem;
+  }
+
+  &__logo {
+    width: 4.6875rem;
+  }
+}
