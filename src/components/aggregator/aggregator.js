@@ -1,87 +1,101 @@
+// @flow
 import React, { Component } from 'react';
 import Indicator from '../indicator/indicator';
 import './aggregator.css';
 
+interface ProfitProfile {
+  totalPaid: string,
+  balanceNow: string,
+  profitLoss: string,
+  percentage: string,
+  inProfit: boolean
+}
+
+interface Account {
+  native_balance: {
+    amount: string,
+    currency: string
+  }
+}
+
+interface Purchase {
+  total: {
+    amount: string,
+    currency: string
+  }
+}
+
 class Aggregator extends Component {
 
-  constructor() {
-    super();
+  _extractPercentageGrowth(startingValue: number, currentValue: number): string {
 
-    this.state = {
-      account: {
-        native_balance: {
-          amount: 0
-        }
-      }
-    };
+    const percentageFigure: number = (currentValue / startingValue * 100);
+    const clippedPercentageFigure: string = percentageFigure.toFixed(2);
+    
+    return percentageFigure > 0 ?
+      `+${clippedPercentageFigure}%`
+      :
+      `-${clippedPercentageFigure}%`;
   }
-  
-  _extractProfit(account, buys) {
 
-    if (this.props.isLoading || buys.constructor !== Array) return;
+  _extractSumFromPurchases(accumulator: number, purchase: Purchase): number {
+    return accumulator + parseFloat(purchase.total.amount);
+  }
 
-    // move this logic to the aggregator, dummy
-    // just send account and buys down
-    function extractSum(accumulator, currentValue) {
-      return accumulator + parseFloat(currentValue.total.amount);
+  _extractProfit(account: Account, purchases: Array<Purchase>): ProfitProfile {
+
+    if (this.props.isLoading || purchases.constructor !== Array) {
+      return {
+        totalPaid: '',
+        balanceNow: '',
+        profitLoss: '',
+        percentage: '',
+        inProfit: true
+      };
     }
 
-    function extractPercentageGrowth(startingValue, currentValue) {
-      const percentageFigure = (currentValue / startingValue * 100).toFixed(2);
-      return percentageFigure > 0 ?
-        `+${percentageFigure}%`
-        :
-        `-${percentageFigure}%`;
-    }
-
-    const totalPaid  = buys.reduce(extractSum, 0);
+    const totalPaid  = purchases.reduce(this._extractSumFromPurchases, 0);
     const balanceNow = parseFloat(account.native_balance.amount);
-    const pl         = (balanceNow - totalPaid).toFixed(2);    
-    const percentage = extractPercentageGrowth(totalPaid, balanceNow);
-    const inProfit   = (pl > 0);
+    const profitLoss = (balanceNow - totalPaid);    
+    const percentage = this._extractPercentageGrowth(totalPaid, balanceNow);
+    const inProfit   = (profitLoss > 0);
 
     return {
       totalPaid: `£${totalPaid} paid`,
       balanceNow: `£${balanceNow} now`,
-      pl: `£${pl}`,
+      profitLoss: `£${profitLoss.toFixed(2)}`,
       percentage, 
       inProfit
     };
 
   }
 
-  _getAggregateState(profit) {
-
-    if (this.props.isLoading) {
-      return true;
-    }
-
-    return profit > 0;
-  }
-
   render() {
 
-    const profitAndLossDefaults = {
+    const profitStatusDefaults: ProfitProfile = {
       totalPaid: '',
       balanceNow: '',
-      pl: '',
+      profitLoss: '',
       percentage: '',
       inProfit: true
     };
 
-    const profitAndLoss = Object.assign(profitAndLossDefaults, this._extractProfit(this.props.account, this.props.buys));
+    const profitStatus: ProfitProfile = Object.assign(
+      profitStatusDefaults,
+      this._extractProfit(this.props.account, this.props.purchases)
+    );
 
     return (
       <section className="aggregator">
         <div className="aggregator__container">
           <h1 className="aggregator__pl-currency">
-            <Indicator inProfit={profitAndLoss.inProfit} className="aggregator__pl-indicator" />
-            <span>{profitAndLoss.pl}</span>
+            <Indicator inProfit={profitStatus.inProfit} className="aggregator__pl-indicator" />
+            <span>{profitStatus.profitLoss}</span>
           </h1>
           <div className="aggregator__metadata">
-            <span>{profitAndLoss.totalPaid}</span>
-            <span>{profitAndLoss.balanceNow}</span>
-            <span>{profitAndLoss.percentage}</span>
+            <span>{profitStatus.totalPaid}</span>
+            <span>{profitStatus.balanceNow}</span>
+            <span>{profitStatus.percentage}</span>
           </div>
         </div>
       </section>

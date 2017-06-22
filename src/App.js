@@ -1,3 +1,4 @@
+// @flow
 import React, { Component } from 'react';
 import './App.css';
 import coinbaseApi from './api/api';
@@ -5,12 +6,19 @@ import Masthead    from './components/masthead/masthead'
 import Aggregator  from './components/aggregator/aggregator'
 
 class App extends Component {
-  constructor(props) {
+
+  state: {
+    account: {},
+    purchases: {},
+    isLoading: boolean
+  };
+
+  constructor(props: {}) {
     super(props);
 
     this.state = {
       account: {},
-      buys: {},
+      purchases: {},
       isLoading: true
     };
   }
@@ -21,7 +29,7 @@ class App extends Component {
         <Masthead />
         <Aggregator 
           account={this.state.account}
-          buys={this.state.buys}
+          purchases={this.state.purchases}
           isLoading={this.state.isLoading}
         />
       </div>
@@ -39,9 +47,9 @@ class App extends Component {
       })
       .then(() => coinbaseApi.getBuys())
       .then(response => response.json())
-      .then(buysData => {
+      .then(purchaseData => {
         this.setState({
-          buys: buysData.data,
+          purchases: purchaseData.data,
           isLoading: false
         });
       })
