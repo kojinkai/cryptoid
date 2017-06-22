@@ -3,10 +3,14 @@
 
 .tabs {
 
-  background: $fadedblue;
+  background: $white;
 
   &__container {
     @include container;
+    @include breakpoint(small) {
+      padding-top: .625rem;
+      padding-bottom: .625rem;      
+    }
     display: flex;
     justify-content: space-around;
     padding-top: 1rem;
@@ -14,18 +18,23 @@
   }
 
   &__button {
+    @include breakpoint(small) {
+      font-size: .875rem;
+      padding: .75rem;      
+    }
+
     border-radius: 10%;
-    color: $white;
-    font-size: .875rem;
+    color: $lightash;
+    font-size: 1.125rem;
     font-weight: 500;
     line-height: 1;
-    padding: .75rem 1rem;
+    padding: 1rem;
     text-transform: uppercase;
     transition: background-color .2s ease-in-out;
 
     &--active {
       background-color: $tabhiglight;
-      color: $lightash;
+      color: $royal;
     }
   }
 
