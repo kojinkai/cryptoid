@@ -1,3 +1,4 @@
+// @flow
 import React, { Component } from 'react';
 import './masthead.css';
 import logo from './logo.svg';

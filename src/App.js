@@ -7,7 +7,6 @@ import Aggregator  from './components/aggregator/aggregator'
 
 class App extends Component {
 
-  props: {};
   state: {
     account: {},
     purchases: {},
