@@ -12,74 +12,17 @@ interface ProfitProfile {
 }
 
 interface Account {
-  balance: {
-    amount: string,
-    currency: string
-  },
-  created_at: string,
-  currency: string,
-  id: string,
-  name: string,
   native_balance: {
     amount: string,
     currency: string
-  },
-  primary: boolean,
-  resource: string,
-  resource_path: string,
-  type: string,
-  updated_at: string
+  }
 }
 
 interface Purchase {
-  amount: {
-    amount: string,
-    currency: string
-  },
-  committed: boolean,
-  created_at: string,
-  fees: [
-    {
-      amount: {
-        amount: string,
-        currency: string
-      },
-      type: string
-    },
-    {
-      amount: {
-        amount: string,
-        currency: string
-      },
-      type: string
-    }
-  ],
-  id: string,
-  instant: boolean,
-  payment_method: {
-    id: string,
-    resource: string,
-    resource_path: string
-  },
-  payout_at: string,
-  requires_completion_step: boolean,
-  resource: string,
-  resource_path: string,
-  status: string,
-  subtotal: {
-    amount: string,
-    currency: string
-  },
   total: {
     amount: string,
     currency: string
-  },
-  transaction: {
-    id: string,
-    resource: string,
-    resource_path: string
-  },
-  updated_at: string
+  }
 }
 
 class Aggregator extends Component {
