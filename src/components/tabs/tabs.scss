@@ -1,0 +1,32 @@
+@import 'styles/colors';
+@import 'styles/grid';
+
+.tabs {
+
+  background: $fadedblue;
+
+  &__container {
+    @include container;
+    display: flex;
+    justify-content: space-around;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+  }
+
+  &__button {
+    border-radius: 10%;
+    color: $white;
+    font-size: .875rem;
+    font-weight: 500;
+    line-height: 1;
+    padding: .75rem 1rem;
+    text-transform: uppercase;
+    transition: background-color .2s ease-in-out;
+
+    &--active {
+      background-color: $tabhiglight;
+      color: $lightash;
+    }
+  }
+
+}
