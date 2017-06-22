@@ -82,7 +82,7 @@ class Aggregator extends Component {
 
     const profitStatus: ProfitProfile = Object.assign(
       profitStatusDefaults,
-      this._extractProfit(this.props.account, this.props.buys)
+      this._extractProfit(this.props.account, this.props.purchases)
     );
 
     return (
