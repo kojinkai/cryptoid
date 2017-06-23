@@ -40,6 +40,27 @@ class App extends Component {
     };
   }
 
+  _addOverallAccount(accountData: { data: Array<Account> }): Array<Account> {
+    const data: Array<Account> = accountData.data;
+    
+    const overallAccountSum = data.reduce((accumulator: number, account: Account) => {
+      return accumulator + parseFloat(account.balance.amount);
+    }, 0);
+
+    const overallAccount: Account = {
+      name: 'ALL',
+      balance: {
+        amount: overallAccountSum.toString(),
+        currency: 'GBP'
+      },
+      currency: 'GBP'
+    }
+
+    const allAccounts: Array<Account> = [...data];
+    allAccounts.push(overallAccount);
+    return allAccounts;   
+  }
+
   render() {
     return (
       <div className="App">
@@ -58,37 +79,11 @@ class App extends Component {
 
     coinbaseApi.getAccount()
       .then(response => response.json())
-      .then(accountData => {
-        const data: Array<Account> = accountData.data;
-        
-        const overallAccountSum = data.reduce((accumulator: number, account: Account) => {
-          return accumulator + parseFloat(account.balance.amount);
-        }, 0);
-
-        const overallAccount: Account = {
-          name: 'ALL',
-          balance: {
-            amount: overallAccountSum.toString(),
-            currency: 'GBP'
-          },
-          currency: 'GBP'
-        }
-
-        const allAccounts: Array<Account> = [...data];
-        allAccounts.push(overallAccount);
-
-        this.setState({
-          accounts: allAccounts
-        });
-      })
+      .then(this._addOverallAccount)
+      .then(allAccounts => this.setState({ accounts: allAccounts }))
       .then(() => coinbaseApi.getBuys())
       .then(response => response.json())
-      .then(purchaseData => {
-        this.setState({
-          purchases: purchaseData.data,
-          isLoading: false
-        });
-      })
+      .then(purchaseData => this.setState({ purchases: purchaseData.data, isLoading: false }))
       .catch(() => {
         console.log('api request failed');
       });
