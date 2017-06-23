@@ -58,7 +58,7 @@ class App extends Component {
 
   _addOverallAccount(accountData: { data: Array<Account> }): Array<Account> {
 
-    const data: Array<Account> = accountData.data;
+    const { data } = accountData;
     
     const overallAccountSum = data.reduce((accumulator: number, account: Account) => {
       return accumulator + parseFloat(account.balance.amount);
