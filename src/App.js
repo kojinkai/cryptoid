@@ -6,10 +6,19 @@ import Masthead    from './components/masthead/masthead';
 import Aggregator  from './components/aggregator/aggregator';
 import Tabs        from './components/tabs/tabs';
 
+interface Account {
+  name: string,
+  balance: {
+    currency: string,
+    amount: string
+  },
+  currency: string
+}
+
 class App extends Component {
 
   state: {
-    account: {},
+    accounts: Array<Account>,
     purchases: {},
     isLoading: boolean
   };
@@ -18,7 +27,14 @@ class App extends Component {
     super(props);
 
     this.state = {
-      account: {},
+      accounts: [{
+        name: '',
+        balance: {
+          currency: '',
+          amount: ''
+        },
+        currency: ''
+      }],
       purchases: {},
       isLoading: true
     };
@@ -30,7 +46,7 @@ class App extends Component {
         <Masthead />
         <Tabs />
         <Aggregator 
-          account={this.state.account}
+          account={this.state.accounts[0]}
           purchases={this.state.purchases}
           isLoading={this.state.isLoading}
         />
@@ -43,8 +59,26 @@ class App extends Component {
     coinbaseApi.getAccount()
       .then(response => response.json())
       .then(accountData => {
+        const data: Array<Account> = accountData.data;
+        
+        const overallAccountSum = data.reduce((accumulator: number, account: Account) => {
+          return accumulator + parseFloat(account.balance.amount);
+        }, 0);
+
+        const overallAccount: Account = {
+          name: 'ALL',
+          balance: {
+            amount: overallAccountSum.toString(),
+            currency: 'GBP'
+          },
+          currency: 'GBP'
+        }
+
+        const allAccounts: Array<Account> = [...data];
+        allAccounts.push(overallAccount);
+
         this.setState({
-          account: accountData.data
+          accounts: allAccounts
         });
       })
       .then(() => coinbaseApi.getBuys())
