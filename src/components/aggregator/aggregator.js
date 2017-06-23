@@ -12,13 +12,17 @@ interface ProfitProfile {
 }
 
 interface Account {
-  native_balance: {
-    amount: string,
-    currency: string
-  }
+  id: string,
+  name: string,
+  balance: {
+    currency: string,
+    amount: number
+  },
+  currency: string
 }
 
 interface Purchase {
+  id: string,
   total: {
     amount: string,
     currency: string
@@ -26,6 +30,10 @@ interface Purchase {
 }
 
 class Aggregator extends Component {
+
+  _extractSumFromPurchases(accumulator: number, purchase: Purchase): number {
+    return accumulator + parseFloat(purchase.total.amount);
+  }
 
   _extractPercentageGrowth(startingValue: number, currentValue: number): string {
 
@@ -36,10 +44,6 @@ class Aggregator extends Component {
       `+${clippedPercentageFigure}%`
       :
       `-${clippedPercentageFigure}%`;
-  }
-
-  _extractSumFromPurchases(accumulator: number, purchase: Purchase): number {
-    return accumulator + parseFloat(purchase.total.amount);
   }
 
   _extractProfit(account: Account, purchases: Array<Purchase>): ProfitProfile {
@@ -55,7 +59,7 @@ class Aggregator extends Component {
     }
 
     const totalPaid  = purchases.reduce(this._extractSumFromPurchases, 0);
-    const balanceNow = parseFloat(account.native_balance.amount);
+    const balanceNow = parseFloat(account.balance.amount);
     const profitLoss = (balanceNow - totalPaid);    
     const percentage = this._extractPercentageGrowth(totalPaid, balanceNow);
     const inProfit   = (profitLoss > 0);
@@ -71,7 +75,6 @@ class Aggregator extends Component {
   }
 
   render() {
-
     const profitStatusDefaults: ProfitProfile = {
       totalPaid: '',
       balanceNow: '',

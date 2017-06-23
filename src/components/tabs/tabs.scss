@@ -1,0 +1,41 @@
+@import 'styles/colors';
+@import 'styles/grid';
+
+.tabs {
+
+  background: $white;
+
+  &__container {
+    @include container;
+    @include breakpoint(small) {
+      padding-top: .625rem;
+      padding-bottom: .625rem;      
+    }
+    display: flex;
+    justify-content: space-around;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+  }
+
+  &__button {
+    @include breakpoint(small) {
+      font-size: .875rem;
+      padding: .75rem;      
+    }
+
+    border-radius: 10%;
+    color: $lightash;
+    font-size: 1.125rem;
+    font-weight: 500;
+    line-height: 1;
+    padding: 1rem;
+    text-transform: uppercase;
+    transition: all .3s ease-in-out;
+
+    &--active {
+      background-color: $tabhiglight;
+      color: $royal;
+    }
+  }
+
+}
