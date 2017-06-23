@@ -97,7 +97,7 @@ class App extends Component {
         <Tabs 
           active={this.state.activeAccount}
           accounts={this.state.accounts}
-          switchtab={this.switchTab}          
+          switchtab={this.switchTab}
         />
         <Aggregator 
           account={this.state.activeAccount}
