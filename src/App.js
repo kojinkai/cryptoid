@@ -8,6 +8,7 @@ import Tabs        from './components/tabs/tabs';
 
 interface Account {
   name: string,
+  id: string,
   balance: {
     currency: string,
     amount: string
@@ -19,9 +20,12 @@ class App extends Component {
 
   state: {
     accounts: Array<Account>,
+    activeAccount: Account,
     purchases: {},
     isLoading: boolean
   };
+
+  switchTab: any;
 
   constructor(props: {}) {
     super(props);
@@ -29,15 +33,27 @@ class App extends Component {
     this.state = {
       accounts: [{
         name: '',
+        id: '',
         balance: {
           currency: '',
           amount: ''
         },
         currency: ''
       }],
+      activeAccount: {
+        name: '',
+        id: '',
+        balance: {
+          currency: '',
+          amount: ''
+        },
+        currency: ''
+      },    
       purchases: {},
       isLoading: true
     };
+
+    this.switchTab = this.switchTab.bind(this);
   }
 
   _addOverallAccount(accountData: { data: Array<Account> }): Array<Account> {
@@ -49,6 +65,7 @@ class App extends Component {
 
     const overallAccount: Account = {
       name: 'ALL',
+      id: '12345',
       balance: {
         amount: overallAccountSum.toString(),
         currency: 'GBP'
@@ -57,17 +74,32 @@ class App extends Component {
     }
 
     const allAccounts: Array<Account> = [...data];
-    allAccounts.push(overallAccount);
+
+    // splice all accounts in the middle for better layout.
+    allAccounts.splice(1, 0, overallAccount);
     return allAccounts;   
+  }
+
+  _getAccountByName(name: string, allAccounts: Array<Account>): Account {
+    return allAccounts.filter(account => account.name === name)[0];
+  }
+
+  switchTab(name: string) {
+    const activeAccount: Account = this._getAccountByName(name, this.state.accounts);
+    this.setState({ activeAccount });
   }
 
   render() {
     return (
       <div className="App">
         <Masthead />
-        <Tabs />
+        <Tabs 
+          active={this.state.activeAccount}
+          accounts={this.state.accounts}
+          switchtab={this.switchTab}          
+        />
         <Aggregator 
-          account={this.state.accounts[0]}
+          account={this.state.activeAccount}
           purchases={this.state.purchases}
           isLoading={this.state.isLoading}
         />
@@ -80,7 +112,10 @@ class App extends Component {
     coinbaseApi.getAccount()
       .then(response => response.json())
       .then(this._addOverallAccount)
-      .then(allAccounts => this.setState({ accounts: allAccounts }))
+      .then(allAccounts => this.setState({
+        accounts: allAccounts,
+        activeAccount: allAccounts.filter(account => account.name === 'ALL')[0]
+      }))
       .then(() => coinbaseApi.getBuys())
       .then(response => response.json())
       .then(purchaseData => this.setState({ purchases: purchaseData.data, isLoading: false }))

@@ -12,6 +12,7 @@ interface ProfitProfile {
 }
 
 interface Account {
+  id: string,
   name: string,
   balance: {
     currency: string,
@@ -21,6 +22,7 @@ interface Account {
 }
 
 interface Purchase {
+  id: string,
   total: {
     amount: string,
     currency: string
