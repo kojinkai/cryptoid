@@ -57,6 +57,7 @@ class App extends Component {
   }
 
   _addOverallAccount(accountData: { data: Array<Account> }): Array<Account> {
+
     const data: Array<Account> = accountData.data;
     
     const overallAccountSum = data.reduce((accumulator: number, account: Account) => {
