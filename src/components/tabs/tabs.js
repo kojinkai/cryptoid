@@ -8,7 +8,7 @@ class Tabs extends Component {
 
     const tabs: Array<any> = this.props.accounts.map(account => {
 
-      const handleClick = () => {
+      const handleClick = (): void => {
         this.props.switchtab(account.name);
       };
 
