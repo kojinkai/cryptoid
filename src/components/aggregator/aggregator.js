@@ -30,6 +30,19 @@ interface Purchase {
 }
 
 class Aggregator extends Component {
+  defaults: ProfitProfile;
+
+  constructor() {
+    super();
+
+    this.defaults = {
+      totalPaid: '',
+      balanceNow: '',
+      profitLoss: '',
+      percentage: '',
+      inProfit: true
+    }
+  }
 
   _extractSumFromPurchases(accumulator: number, purchase: Purchase): number {
     return accumulator + parseFloat(purchase.total.amount);
@@ -49,13 +62,7 @@ class Aggregator extends Component {
   _extractProfit(account: Account, purchases: Array<Purchase>): ProfitProfile {
 
     if (this.props.isLoading || purchases.constructor !== Array) {
-      return {
-        totalPaid: '',
-        balanceNow: '',
-        profitLoss: '',
-        percentage: '',
-        inProfit: true
-      };
+      return this.defaults;
     }
 
     const totalPaid  = purchases.reduce(this._extractSumFromPurchases, 0);
@@ -75,16 +82,9 @@ class Aggregator extends Component {
   }
 
   render() {
-    const profitStatusDefaults: ProfitProfile = {
-      totalPaid: '',
-      balanceNow: '',
-      profitLoss: '',
-      percentage: '',
-      inProfit: true
-    };
 
     const profitStatus: ProfitProfile = Object.assign(
-      profitStatusDefaults,
+      this.defaults,
       this._extractProfit(this.props.account, this.props.purchases)
     );
 
