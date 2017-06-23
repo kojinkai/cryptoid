@@ -3,10 +3,13 @@ node_js:
 - '6.10.3'
 - '7'
 - '8'
+env:
+- CI=true
 cache:
   directories:
     - node_modules
 script:
+  - npm run build-css
   - npm run flow
   - npm test
   - npm run build
