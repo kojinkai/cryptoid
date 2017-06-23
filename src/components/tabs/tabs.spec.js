@@ -1,7 +1,7 @@
-import React    from 'react';
+import React       from 'react';
 import { shallow } from 'enzyme';
-import Tabs     from './tabs';
-import accounts from '../../mocks/accounts';
+import Tabs        from './tabs';
+import accounts    from '../../mocks/accounts';
 
 describe('The tabs component', () => {
   it('renders 1 tab button for each account passed in', () => {
