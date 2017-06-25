@@ -6,7 +6,7 @@ import accounts    from '../../mocks/accounts';
 describe('The tabs component', () => {
   it('renders 1 tab button for each account passed in', () => {
     const wrapper = shallow(<Tabs active={accounts[0]} accounts={accounts} />);
-    expect(wrapper.find('button').length).toBe(3);
+    expect(wrapper.find('button').length).toBe(4);
   });
 
   it('adds an active class to the tab button corresponding to the active account', () => {
