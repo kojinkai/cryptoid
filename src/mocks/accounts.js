@@ -25,5 +25,14 @@ export default [
     'currency': 'GBP',
     'id': '1ggf398d-193b-5b2a-9155-3b4732659ede',
     'name': 'GBP'
-  }  
+  },
+  {
+    'balance': {
+      'amount': '100.00',
+      'currency': 'USD'
+    },
+    'currency': 'GBP',
+    'id': '2zdf398d-193b-5b2a-9155-3b4732659ede',
+    'name': 'OTHER'
+  }    
 ];

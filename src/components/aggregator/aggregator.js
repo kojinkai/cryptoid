@@ -50,13 +50,22 @@ class Aggregator extends Component {
 
   _extractPercentageGrowth(startingValue: number, currentValue: number): string {
 
+    function fixFloat(floatingNumber: number, decimalPlaces: number): string {
+      return floatingNumber.toFixed(decimalPlaces);
+    }
     const percentageFigure: number = (currentValue / startingValue * 100);
-    const clippedPercentageFigure: string = percentageFigure.toFixed(2);
     
-    return percentageFigure > 0 ?
-      `+${clippedPercentageFigure}%`
-      :
-      `-${clippedPercentageFigure}%`;
+    if (percentageFigure >= 100) {
+
+      const fixed = fixFloat((percentageFigure - 100), 2);
+      return `+${fixed}%`
+
+    } else {
+
+      const fixed = fixFloat((100 - percentageFigure), 2);
+      return `-${fixed}%`
+
+    }
   }
 
   _extractProfit(account: Account, purchases: Array<Purchase>): ProfitProfile {
