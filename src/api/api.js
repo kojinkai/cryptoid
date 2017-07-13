@@ -15,12 +15,12 @@ class CoinbaseApiService {
     return fetch(request);
   }
 
-  getAccount() {
+  getAccounts() {
     return this.get('account');
   }
 
-  getBuys() {
-    return this.get('buys');
+  getAccountPurchasesByID(id) {
+    return this.get(`account/${id}/buys`);
   }
 }
 

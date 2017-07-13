@@ -49,7 +49,7 @@ class App extends Component {
         },
         currency: ''
       },    
-      purchases: {},
+      purchases: [],
       isLoading: true
     };
 
@@ -110,21 +110,27 @@ class App extends Component {
 
   componentDidMount() {
 
-    coinbaseApi.getAccount()
+    coinbaseApi.getAccounts()
       .then(response => response.json())
-      .then(this._addOverallAccount)
-      .then(allAccounts => this.setState({
-        accounts: allAccounts,
-        activeAccount: allAccounts.filter(account => account.name === 'ALL')[0]
-      }))
-      .then(() => coinbaseApi.getBuys())
-      .then(response => response.json())
-      .then(purchaseData => this.setState({ purchases: purchaseData.data, isLoading: false }))
-      .catch(() => {
-        console.log('api request failed');
+      .then(accountData => {
+
+        const purchaseRequests = accountData.data.map(account => coinbaseApi.getAccountPurchasesByID(account.id));
+        const aggregatedAccountsData: Array<account> = this._addOverallAccount(accountData);
+
+        Promise.all(purchaseRequests)
+          .then(responses => responses.map(response => response.json()))
+          .then(requestPromises => requestPromises.forEach(
+            (requestPromise, index) => requestPromise.then(requestData => {
+              this.setState({
+                accounts: aggregatedAccountsData,
+                activeAccount: aggregatedAccountsData.filter(account => account.name === 'ALL')[0],                  
+                purchases: this.state.purchases.concat(requestData.data),
+                isLoading: index !== requestPromises.length - 1
+              });
+            })
+          )
+        );
       });
-
-
   }
 }
 

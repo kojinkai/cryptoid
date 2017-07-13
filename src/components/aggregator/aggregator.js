@@ -22,6 +22,7 @@ interface Account {
 }
 
 interface Purchase {
+  currency: string,
   id: string,
   total: {
     amount: string,
@@ -44,25 +45,26 @@ class Aggregator extends Component {
     }
   }
 
+  _fixFloat(floatingNumber: number, decimalPlaces: number): string {
+    return floatingNumber.toFixed(decimalPlaces);
+  }  
+
   _extractSumFromPurchases(accumulator: number, purchase: Purchase): number {
     return accumulator + parseFloat(purchase.total.amount);
   }
 
   _extractPercentageGrowth(startingValue: number, currentValue: number): string {
 
-    function fixFloat(floatingNumber: number, decimalPlaces: number): string {
-      return floatingNumber.toFixed(decimalPlaces);
-    }
     const percentageFigure: number = (currentValue / startingValue * 100);
     
     if (percentageFigure >= 100) {
 
-      const fixed = fixFloat((percentageFigure - 100), 2);
+      const fixed = this._fixFloat((percentageFigure - 100), 2);
       return `+${fixed}%`
 
     } else {
 
-      const fixed = fixFloat((100 - percentageFigure), 2);
+      const fixed = this._fixFloat((100 - percentageFigure), 2);
       return `-${fixed}%`
 
     }
@@ -74,7 +76,7 @@ class Aggregator extends Component {
       return this.defaults;
     }
 
-    const totalPaid  = purchases.reduce(this._extractSumFromPurchases, 0);
+    const totalPaid  = this._fixFloat(purchases.reduce(this._extractSumFromPurchases, 0), 2);
     const balanceNow = parseFloat(account.balance.amount);
     const profitLoss = (balanceNow - totalPaid);    
     const percentage = this._extractPercentageGrowth(totalPaid, balanceNow);
