@@ -4,7 +4,7 @@ import './App.css';
 import coinbaseApi from './api/api';
 import Masthead    from './components/masthead/masthead';
 import Aggregator  from './components/aggregator/aggregator';
-import Tabs        from './components/tabs/tabs';
+import Tabs        from './components/tabs';
 
 interface Account {
   name: string,

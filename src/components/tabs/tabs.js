@@ -10,6 +10,8 @@ class Tabs extends Component {
 
       const handleClick = (): void => {
         this.props.switchtab(account.name);
+        // TODO remove this call as we will get active account from the store - switchtab is passed as prop from App.js
+        this.props.onTab(account.name);
       };
 
       const classes: string = account.name === this.props.active.name ? 
