@@ -4,7 +4,7 @@ import { connect } from 'react-redux'
 import './App.css';
 import { fetchAccounts } from './actions';
 import Masthead    from '../masthead/masthead';
-// import Aggregator  from '../aggregator/aggregator';
+import Aggregator  from '../aggregator';
 import Tabs        from '../tabs';
 
 class App extends Component {
@@ -24,7 +24,8 @@ class App extends Component {
     return (
       <div className="App">
         <Masthead />
-        <Tabs onSwitchTab={this.switchWallet}/>
+        <Tabs onSwitchTab={this.switchWallet} />
+        <Aggregator />
       </div>
     );
   }

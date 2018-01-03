@@ -2,7 +2,7 @@
 
 import { createAction } from 'redux-actions';
 import coinbaseApi from '../../api/api';
-import { Wallet } from './interfaces';
+import { Wallet } from '../../interfaces';
 
 export const getAccountData = createAction('GET_ACCOUNT_DATA');
 export const receiveAccountData = createAction('RECEIVE_ACCOUNT_DATA');
