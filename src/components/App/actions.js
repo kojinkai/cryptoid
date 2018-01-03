@@ -1,5 +1,3 @@
-// @flow
-
 import { createAction } from 'redux-actions';
 import coinbaseApi from '../../api/api';
 import { Wallet } from '../../interfaces';
