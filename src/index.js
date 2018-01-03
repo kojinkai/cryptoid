@@ -1,18 +1,20 @@
 // @flow
 import React from 'react';
 import { render } from 'react-dom';
-import { createStore, combineReducers } from 'redux';
+import { createStore, applyMiddleware, combineReducers } from 'redux';
 import { Provider } from 'react-redux'
+import thunk from 'redux-thunk'
 import tabs from './components/tabs/reducer';
-import App from './App';
+import account from './components/App/reducer';
+import App from './components/App/App';
 import registerServiceWorker from './registerServiceWorker';
 import './index.css';
 
-const reducer = combineReducers({ tabs });
-
+const reducer = combineReducers({ tabs, account });
 const store = createStore(
-  reducer, 
-  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+  reducer,
+  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__(),
+  applyMiddleware(thunk),
 )
 
 render(
