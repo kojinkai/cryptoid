@@ -8,8 +8,9 @@ export const getAccountData = createAction('GET_ACCOUNT_DATA');
 export const receiveAccountData = createAction('RECEIVE_ACCOUNT_DATA');
 export const errorAccountData = createAction('ERROR_ACCOUNT_DATA');
 export const finishLoadingAccountData = createAction('FINISH_ACCOUNT_DATA');
+export const switchWallet = createAction('SWITCH_WALLET');
 
-const fetchAccounts = () => dispatch => {
+export const fetchAccounts = () => dispatch => {
   dispatch(getAccountData());
 
   return coinbaseApi.getAccounts()
@@ -32,7 +33,3 @@ const fetchAccounts = () => dispatch => {
     })
     .catch(err => console.error(err));
   };
-
-export const fetchAccountsIfNeeded = () => dispatch => {
-  return dispatch(fetchAccounts())
-}

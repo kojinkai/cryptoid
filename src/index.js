@@ -6,7 +6,7 @@ import { Provider } from 'react-redux'
 import thunk from 'redux-thunk'
 import tabs from './components/tabs/reducer';
 import account from './components/App/reducer';
-import App from './components/App/App';
+import App from './components/App';
 import registerServiceWorker from './registerServiceWorker';
 import './index.css';
 

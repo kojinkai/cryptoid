@@ -1,13 +1,9 @@
 import { connect } from 'react-redux';
 import Tabs from './tabs';
-import { tab } from './actions';
-
-const mapDispatchToProps = dispatch => ({
-  onTab: tabName => dispatch(tab(tabName))
-})
 
 const mapStateToProps = state => ({
-  wallets: state.wallets
+  activeWallet: state.account.get('activeWallet').toJS(),
+  wallets: state.account.get('wallets').toJS()
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(Tabs)
+export default connect(mapStateToProps)(Tabs)

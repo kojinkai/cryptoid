@@ -1,10 +1,13 @@
+import { fromJS } from 'immutable';
 import { handleActions } from 'redux-actions';
 import { tab } from './actions';
 
+const defaultState = fromJS({ activeTab: {} });
+
 const tabReducer = handleActions({
   [tab]: (state, action) => ({
-    tab: action.payload
+    activeTab: state.set('activeTab', state.get(action.payload)),
   })
-}, { tab: 'all' });
+}, defaultState);
 
 export default tabReducer;
