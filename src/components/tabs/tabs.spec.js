@@ -1,11 +1,11 @@
 import { componentFactory } from '../../test/helpers';
-import Tabs        from './tabs';
-import wallets    from '../../test/mocks/wallets';
+import wallets from '../../test/mocks/wallets';
+import Tabs from './tabs';
 
 const createComponentWithProps = componentFactory(Tabs, {
-    wallets,
-    activeWallet: wallets[0],
-    onSwitchTab: jest.fn(),
+  wallets,
+  activeWallet: wallets[0],
+  onSwitchTab: jest.fn(),
 });
 
 describe('<Tabs />', () => {

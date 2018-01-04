@@ -1,10 +1,17 @@
 // @flow
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { Wallet, ProfitProfile, Purchase } from '../../interfaces';
 import Indicator from '../indicator/indicator';
 import './aggregator.css';
 
 class Aggregator extends Component {
+
+  static propTypes = {
+    activeWallet: PropTypes.object.isRequired,
+    isLoading: PropTypes.bool.isRequired
+  }
+
   defaults: ProfitProfile;
 
   constructor() {
