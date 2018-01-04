@@ -1,17 +1,10 @@
-import React from 'react';
-import { shallow } from 'enzyme';
+import { componentFactory } from '../../test/helpers';
 import App from './App';
 
-function createComponentWithProps(config = {}) {
-  const defaults = {
-    switchWallet: jest.fn(),
-    getAccountData: jest.fn(),
-  };
-
-  const props = { ...defaults, ...config };
-
-  return shallow(<App {...props} />);
-}
+const createComponentWithProps = componentFactory(App, {
+  switchWallet: jest.fn(),
+  getAccountData: jest.fn(),
+});
 
 describe('<App />', () => {
   let wrapper;

@@ -1,8 +1,15 @@
 // @flow
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import './tabs.css';
 
 class Tabs extends Component {
+
+  static propTypes = {
+    wallets: PropTypes.arrayOf(PropTypes.object).isRequired,
+    activeWallet: PropTypes.object.isRequired,
+    onSwitchTab: PropTypes.func.isRequired,
+  }
 
   render() {
 
