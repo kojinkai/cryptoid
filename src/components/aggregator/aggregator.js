@@ -1,36 +1,17 @@
 // @flow
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+import { Wallet, ProfitProfile, Purchase } from '../../interfaces';
 import Indicator from '../indicator/indicator';
 import './aggregator.css';
 
-interface ProfitProfile {
-  totalPaid: string,
-  balanceNow: string,
-  profitLoss: string,
-  percentage: string,
-  inProfit: boolean
-}
-
-interface Account {
-  id: string,
-  name: string,
-  balance: {
-    currency: string,
-    amount: number
-  },
-  currency: string
-}
-
-interface Purchase {
-  currency: string,
-  id: string,
-  total: {
-    amount: string,
-    currency: string
-  }
-}
-
 class Aggregator extends Component {
+
+  static propTypes = {
+    activeWallet: PropTypes.object.isRequired,
+    isLoading: PropTypes.bool.isRequired
+  }
+
   defaults: ProfitProfile;
 
   constructor() {
@@ -45,8 +26,8 @@ class Aggregator extends Component {
     }
   }
 
-  _fixFloat(floatingNumber: number, decimalPlaces: number): string {
-    return floatingNumber.toFixed(decimalPlaces);
+  _fixFloat(floatingNumber: number): number {
+    return Number((floatingNumber).toFixed(2));
   }  
 
   _extractSumFromPurchases(accumulator: number, purchase: Purchase): number {
@@ -59,25 +40,24 @@ class Aggregator extends Component {
     
     if (percentageFigure >= 100) {
 
-      const fixed = this._fixFloat((percentageFigure - 100), 2);
+      const fixed = this._fixFloat((percentageFigure - 100));
       return `+${fixed}%`
 
     } else {
 
-      const fixed = this._fixFloat((100 - percentageFigure), 2);
+      const fixed = this._fixFloat((100 - percentageFigure));
       return `-${fixed}%`
 
     }
   }
 
-  _extractProfit(account: Account, purchases: Array<Purchase>): ProfitProfile {
-
-    if (this.props.isLoading || purchases.constructor !== Array) {
+  _extractProfit(activeWallet: Wallet): ProfitProfile { 
+    if (this.props.isLoading) {
       return this.defaults;
     }
 
-    const totalPaid  = this._fixFloat(purchases.reduce(this._extractSumFromPurchases, 0), 2);
-    const balanceNow = parseFloat(account.balance.amount);
+    const totalPaid  = this._fixFloat(activeWallet.purchases.reduce(this._extractSumFromPurchases, 0));
+    const balanceNow = parseFloat(activeWallet.balance.amount);
     const profitLoss = (balanceNow - totalPaid);    
     const percentage = this._extractPercentageGrowth(totalPaid, balanceNow);
     const inProfit   = (profitLoss > 0);
@@ -94,10 +74,10 @@ class Aggregator extends Component {
 
   render() {
 
-    const profitStatus: ProfitProfile = Object.assign(
-      this.defaults,
-      this._extractProfit(this.props.account, this.props.purchases)
-    );
+    const profitStatus: ProfitProfile = {
+      ...this.defaults,
+      ...this._extractProfit(this.props.activeWallet),
+    }
 
     return (
       <section className="aggregator">
