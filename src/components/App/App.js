@@ -1,6 +1,6 @@
 // @flow
 import React, { Component } from 'react';
-import { connect } from 'react-redux'
+import PropTypes from 'prop-types';
 import './App.css';
 import { fetchAccounts } from './actions';
 import Masthead    from '../masthead/masthead';
@@ -8,6 +8,11 @@ import Aggregator  from '../aggregator';
 import Tabs        from '../tabs';
 
 class App extends Component {
+
+  static propTypes = {
+    switchWallet: PropTypes.func.isRequired,
+    getAccountData: PropTypes.func.isRequired,
+  }
 
   constructor(props) {
     super(props);
@@ -31,9 +36,8 @@ class App extends Component {
   }
 
   componentDidMount() {
-    const { dispatch } = this.props
-    dispatch(fetchAccounts())
+    this.props.getAccountData(); 
   }
 }
 
-export default connect()(App);
+export default App;
