@@ -1,29 +1,25 @@
-class CoinbaseApiService {
+const baseUrl = 'http://localhost:3001';
 
-  constructor(baseUrl) {
-    this.baseUrl = 'http://localhost:3001';
-  }
+const get = path => {
 
-  get(path) {
+  const url = `${this.baseUrl}/${path}`
 
-    const url = `${this.baseUrl}/${path}`
+  const request = new Request(url, {
+    method: 'GET'
+  });
 
-    const request = new Request(url, {
-      method: 'GET'
-    });
+  return fetch(request);
+};
 
-    return fetch(request);
-  }
+const coinbaseApi = {
 
   getAccounts() {
-    return this.get('account');
-  }
+    return get('account');
+  },
 
   getAccountPurchasesByID(id) {
-    return this.get(`account/${id}/buys`);
+    return get(`account/${id}/buys`);
   }
 }
-
-const coinbaseApi = new CoinbaseApiService();
 
 export default coinbaseApi;

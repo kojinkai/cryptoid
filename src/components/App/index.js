@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import App from './App';
-import { switchWallet, fetchAccounts } from './actions';
+import { switchWallet, getAccountData } from './actions';
 
 const mapStateToProps = state => ({
   activeWallet: state.account.get('activeWallet').toJS(),
@@ -9,7 +9,7 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = dispatch => ({
   switchWallet: tabName => dispatch(switchWallet(tabName)),
-  getAccountData: () => dispatch(fetchAccounts()),
+  getAccountData: () => dispatch(getAccountData()),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(App);
