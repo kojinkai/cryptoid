@@ -2,7 +2,7 @@ import { fromJS } from 'immutable';
 import { handleActions } from 'redux-actions';
 import { getAccountData, receiveAccountData, finishLoadingAccountData, switchWallet } from './actions';
 
-const defaultState = fromJS({ wallets: [], activeWallet: { name: 'BTC', purchases: [] }, isLoading: true, purchases: [] });
+const defaultState = fromJS({ wallets: [], activeWallet: { name: 'BTC', purchases: [] }, isLoading: true });
 
 const appReducer = handleActions({
   [getAccountData]: state => state.set('isLoading', true),
