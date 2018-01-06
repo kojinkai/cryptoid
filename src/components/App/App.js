@@ -37,7 +37,11 @@ class App extends Component {
         <Masthead />
         <Tabs onSwitchTab={this.switchWallet} />
         <Aggregator isLoading={isLoading} activeWallet={activeWallet} />
-        <Purchases isLoading={isLoading} purchases={activeWallet.purchases} />
+        <Purchases
+          isLoading={isLoading}
+          purchases={activeWallet.purchases}
+          activeWalletName={activeWallet.name}
+        />
       </div>
     );
   }
