@@ -15,7 +15,78 @@ ShallowWrapper {
     <Connect(Tabs)
         onSwitchTab={[Function]}
     />
-    <Connect(Aggregator) />
+    <Aggregator
+        activeWallet={
+            Object {
+                "balance": Object {
+                  "amount": "800",
+                  "currency": "GBP",
+                },
+                "currency": "BTC",
+                "id": "58542935-67b5-56e1-a3f9-42686e07fa40",
+                "name": "BTC",
+                "purchases": Array [
+                  Object {
+                    "currency": "BTC",
+                    "id": "9e14d574-30fa-5d85-b02c-6be0d851d61d",
+                    "total": Object {
+                      "amount": "101.01",
+                      "currency": "GBP",
+                    },
+                  },
+                  Object {
+                    "currency": "BTC",
+                    "id": "8e14d574-30fa-5d85-b02c-6be0d851d61d",
+                    "total": Object {
+                      "amount": "202.02",
+                      "currency": "GBP",
+                    },
+                  },
+                  Object {
+                    "currency": "BTC",
+                    "id": "8e14d574-30fa-5d85-b02c-6be0d851d61d",
+                    "total": Object {
+                      "amount": "303.03",
+                      "currency": "GBP",
+                    },
+                  },
+                ],
+              }
+        }
+        isLoading={false}
+    />
+    <Purchases
+        activeWalletName="BTC"
+        isLoading={false}
+        purchases={
+            Array [
+                Object {
+                  "currency": "BTC",
+                  "id": "9e14d574-30fa-5d85-b02c-6be0d851d61d",
+                  "total": Object {
+                    "amount": "101.01",
+                    "currency": "GBP",
+                  },
+                },
+                Object {
+                  "currency": "BTC",
+                  "id": "8e14d574-30fa-5d85-b02c-6be0d851d61d",
+                  "total": Object {
+                    "amount": "202.02",
+                    "currency": "GBP",
+                  },
+                },
+                Object {
+                  "currency": "BTC",
+                  "id": "8e14d574-30fa-5d85-b02c-6be0d851d61d",
+                  "total": Object {
+                    "amount": "303.03",
+                    "currency": "GBP",
+                  },
+                },
+              ]
+        }
+    />
 </div>,
   "nodes": Array [
     <div
@@ -25,7 +96,78 @@ ShallowWrapper {
       <Connect(Tabs)
             onSwitchTab={[Function]}
       />
-      <Connect(Aggregator) />
+      <Aggregator
+            activeWallet={
+                  Object {
+                        "balance": Object {
+                          "amount": "800",
+                          "currency": "GBP",
+                        },
+                        "currency": "BTC",
+                        "id": "58542935-67b5-56e1-a3f9-42686e07fa40",
+                        "name": "BTC",
+                        "purchases": Array [
+                          Object {
+                            "currency": "BTC",
+                            "id": "9e14d574-30fa-5d85-b02c-6be0d851d61d",
+                            "total": Object {
+                              "amount": "101.01",
+                              "currency": "GBP",
+                            },
+                          },
+                          Object {
+                            "currency": "BTC",
+                            "id": "8e14d574-30fa-5d85-b02c-6be0d851d61d",
+                            "total": Object {
+                              "amount": "202.02",
+                              "currency": "GBP",
+                            },
+                          },
+                          Object {
+                            "currency": "BTC",
+                            "id": "8e14d574-30fa-5d85-b02c-6be0d851d61d",
+                            "total": Object {
+                              "amount": "303.03",
+                              "currency": "GBP",
+                            },
+                          },
+                        ],
+                      }
+            }
+            isLoading={false}
+      />
+      <Purchases
+            activeWalletName="BTC"
+            isLoading={false}
+            purchases={
+                  Array [
+                        Object {
+                          "currency": "BTC",
+                          "id": "9e14d574-30fa-5d85-b02c-6be0d851d61d",
+                          "total": Object {
+                            "amount": "101.01",
+                            "currency": "GBP",
+                          },
+                        },
+                        Object {
+                          "currency": "BTC",
+                          "id": "8e14d574-30fa-5d85-b02c-6be0d851d61d",
+                          "total": Object {
+                            "amount": "202.02",
+                            "currency": "GBP",
+                          },
+                        },
+                        Object {
+                          "currency": "BTC",
+                          "id": "8e14d574-30fa-5d85-b02c-6be0d851d61d",
+                          "total": Object {
+                            "amount": "303.03",
+                            "currency": "GBP",
+                          },
+                        },
+                      ]
+            }
+      />
 </div>,
   ],
   "options": Object {},
@@ -35,7 +177,45 @@ ShallowWrapper {
       "_compositeType": 0,
       "_context": Object {},
       "_currentElement": <App
+        activeWallet={
+                Object {
+                        "balance": Object {
+                          "amount": "800",
+                          "currency": "GBP",
+                        },
+                        "currency": "BTC",
+                        "id": "58542935-67b5-56e1-a3f9-42686e07fa40",
+                        "name": "BTC",
+                        "purchases": Array [
+                          Object {
+                            "currency": "BTC",
+                            "id": "9e14d574-30fa-5d85-b02c-6be0d851d61d",
+                            "total": Object {
+                              "amount": "101.01",
+                              "currency": "GBP",
+                            },
+                          },
+                          Object {
+                            "currency": "BTC",
+                            "id": "8e14d574-30fa-5d85-b02c-6be0d851d61d",
+                            "total": Object {
+                              "amount": "202.02",
+                              "currency": "GBP",
+                            },
+                          },
+                          Object {
+                            "currency": "BTC",
+                            "id": "8e14d574-30fa-5d85-b02c-6be0d851d61d",
+                            "total": Object {
+                              "amount": "303.03",
+                              "currency": "GBP",
+                            },
+                          },
+                        ],
+                      }
+        }
         getAccountData={[Function]}
+        isLoading={false}
         switchWallet={[Function]}
 />,
       "_debugID": 1,
@@ -45,7 +225,43 @@ ShallowWrapper {
         "_reactInternalInstance": [Circular],
         "context": Object {},
         "props": Object {
+          "activeWallet": Object {
+            "balance": Object {
+              "amount": "800",
+              "currency": "GBP",
+            },
+            "currency": "BTC",
+            "id": "58542935-67b5-56e1-a3f9-42686e07fa40",
+            "name": "BTC",
+            "purchases": Array [
+              Object {
+                "currency": "BTC",
+                "id": "9e14d574-30fa-5d85-b02c-6be0d851d61d",
+                "total": Object {
+                  "amount": "101.01",
+                  "currency": "GBP",
+                },
+              },
+              Object {
+                "currency": "BTC",
+                "id": "8e14d574-30fa-5d85-b02c-6be0d851d61d",
+                "total": Object {
+                  "amount": "202.02",
+                  "currency": "GBP",
+                },
+              },
+              Object {
+                "currency": "BTC",
+                "id": "8e14d574-30fa-5d85-b02c-6be0d851d61d",
+                "total": Object {
+                  "amount": "303.03",
+                  "currency": "GBP",
+                },
+              },
+            ],
+          },
           "getAccountData": [Function],
+          "isLoading": false,
           "switchWallet": [Function],
         },
         "refs": Object {},
@@ -76,7 +292,78 @@ ShallowWrapper {
           <Connect(Tabs)
                     onSwitchTab={[Function]}
           />
-          <Connect(Aggregator) />
+          <Aggregator
+                    activeWallet={
+                              Object {
+                                        "balance": Object {
+                                          "amount": "800",
+                                          "currency": "GBP",
+                                        },
+                                        "currency": "BTC",
+                                        "id": "58542935-67b5-56e1-a3f9-42686e07fa40",
+                                        "name": "BTC",
+                                        "purchases": Array [
+                                          Object {
+                                            "currency": "BTC",
+                                            "id": "9e14d574-30fa-5d85-b02c-6be0d851d61d",
+                                            "total": Object {
+                                              "amount": "101.01",
+                                              "currency": "GBP",
+                                            },
+                                          },
+                                          Object {
+                                            "currency": "BTC",
+                                            "id": "8e14d574-30fa-5d85-b02c-6be0d851d61d",
+                                            "total": Object {
+                                              "amount": "202.02",
+                                              "currency": "GBP",
+                                            },
+                                          },
+                                          Object {
+                                            "currency": "BTC",
+                                            "id": "8e14d574-30fa-5d85-b02c-6be0d851d61d",
+                                            "total": Object {
+                                              "amount": "303.03",
+                                              "currency": "GBP",
+                                            },
+                                          },
+                                        ],
+                                      }
+                    }
+                    isLoading={false}
+          />
+          <Purchases
+                    activeWalletName="BTC"
+                    isLoading={false}
+                    purchases={
+                              Array [
+                                        Object {
+                                          "currency": "BTC",
+                                          "id": "9e14d574-30fa-5d85-b02c-6be0d851d61d",
+                                          "total": Object {
+                                            "amount": "101.01",
+                                            "currency": "GBP",
+                                          },
+                                        },
+                                        Object {
+                                          "currency": "BTC",
+                                          "id": "8e14d574-30fa-5d85-b02c-6be0d851d61d",
+                                          "total": Object {
+                                            "amount": "202.02",
+                                            "currency": "GBP",
+                                          },
+                                        },
+                                        Object {
+                                          "currency": "BTC",
+                                          "id": "8e14d574-30fa-5d85-b02c-6be0d851d61d",
+                                          "total": Object {
+                                            "amount": "303.03",
+                                            "currency": "GBP",
+                                          },
+                                        },
+                                      ]
+                    }
+          />
 </div>,
         "_debugID": 2,
         "_renderedOutput": <div
@@ -86,7 +373,78 @@ ShallowWrapper {
           <Connect(Tabs)
                     onSwitchTab={[Function]}
           />
-          <Connect(Aggregator) />
+          <Aggregator
+                    activeWallet={
+                              Object {
+                                        "balance": Object {
+                                          "amount": "800",
+                                          "currency": "GBP",
+                                        },
+                                        "currency": "BTC",
+                                        "id": "58542935-67b5-56e1-a3f9-42686e07fa40",
+                                        "name": "BTC",
+                                        "purchases": Array [
+                                          Object {
+                                            "currency": "BTC",
+                                            "id": "9e14d574-30fa-5d85-b02c-6be0d851d61d",
+                                            "total": Object {
+                                              "amount": "101.01",
+                                              "currency": "GBP",
+                                            },
+                                          },
+                                          Object {
+                                            "currency": "BTC",
+                                            "id": "8e14d574-30fa-5d85-b02c-6be0d851d61d",
+                                            "total": Object {
+                                              "amount": "202.02",
+                                              "currency": "GBP",
+                                            },
+                                          },
+                                          Object {
+                                            "currency": "BTC",
+                                            "id": "8e14d574-30fa-5d85-b02c-6be0d851d61d",
+                                            "total": Object {
+                                              "amount": "303.03",
+                                              "currency": "GBP",
+                                            },
+                                          },
+                                        ],
+                                      }
+                    }
+                    isLoading={false}
+          />
+          <Purchases
+                    activeWalletName="BTC"
+                    isLoading={false}
+                    purchases={
+                              Array [
+                                        Object {
+                                          "currency": "BTC",
+                                          "id": "9e14d574-30fa-5d85-b02c-6be0d851d61d",
+                                          "total": Object {
+                                            "amount": "101.01",
+                                            "currency": "GBP",
+                                          },
+                                        },
+                                        Object {
+                                          "currency": "BTC",
+                                          "id": "8e14d574-30fa-5d85-b02c-6be0d851d61d",
+                                          "total": Object {
+                                            "amount": "202.02",
+                                            "currency": "GBP",
+                                          },
+                                        },
+                                        Object {
+                                          "currency": "BTC",
+                                          "id": "8e14d574-30fa-5d85-b02c-6be0d851d61d",
+                                          "total": Object {
+                                            "amount": "303.03",
+                                            "currency": "GBP",
+                                          },
+                                        },
+                                      ]
+                    }
+          />
 </div>,
       },
       "_renderedNodeType": 0,
@@ -100,7 +458,45 @@ ShallowWrapper {
   },
   "root": [Circular],
   "unrendered": <App
+    activeWallet={
+        Object {
+            "balance": Object {
+              "amount": "800",
+              "currency": "GBP",
+            },
+            "currency": "BTC",
+            "id": "58542935-67b5-56e1-a3f9-42686e07fa40",
+            "name": "BTC",
+            "purchases": Array [
+              Object {
+                "currency": "BTC",
+                "id": "9e14d574-30fa-5d85-b02c-6be0d851d61d",
+                "total": Object {
+                  "amount": "101.01",
+                  "currency": "GBP",
+                },
+              },
+              Object {
+                "currency": "BTC",
+                "id": "8e14d574-30fa-5d85-b02c-6be0d851d61d",
+                "total": Object {
+                  "amount": "202.02",
+                  "currency": "GBP",
+                },
+              },
+              Object {
+                "currency": "BTC",
+                "id": "8e14d574-30fa-5d85-b02c-6be0d851d61d",
+                "total": Object {
+                  "amount": "303.03",
+                  "currency": "GBP",
+                },
+              },
+            ],
+          }
+    }
     getAccountData={[Function]}
+    isLoading={false}
     switchWallet={[Function]}
 />,
 }

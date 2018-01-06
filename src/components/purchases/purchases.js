@@ -1,10 +1,18 @@
 // @flow
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { format } from 'date-fns';
 import { getPrettyCurrencyFromCode, fixFloat } from '../../helpers';
 import './purchases.css';
 
 class Purchases extends Component {
+
+  static propTypes = {
+    activeWalletName: PropTypes.string.isRequired,
+    purchases: PropTypes.array.isRequired,
+    isLoading: PropTypes.bool.isRequired,
+  }
+
   render() {
     const { purchases, activeWalletName } = this.props;
     const transactionDescription = `Bought ${getPrettyCurrencyFromCode(activeWalletName)}`;
