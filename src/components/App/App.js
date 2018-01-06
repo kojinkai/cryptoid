@@ -1,6 +1,7 @@
 // @flow
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import { Wallet } from '../../interfaces';
 import './App.css';
 import Masthead    from '../masthead/masthead';
 import Aggregator  from '../aggregator/aggregator';
@@ -10,6 +11,8 @@ import Purchases   from '../purchases/purchases';
 type Props = {
   switchWallet: (name: string) => void,
   getAccountData: () => void,
+  activeWallet: Wallet,
+  isLoading: boolean,
 }
 
 class App extends Component {
@@ -19,6 +22,8 @@ class App extends Component {
   static propTypes = {
     switchWallet: PropTypes.func.isRequired,
     getAccountData: PropTypes.func.isRequired,
+    activeWallet: PropTypes.object.isRequired,
+    isLoading: PropTypes.bool.isRequired,
   }
 
   constructor(props: Props) {

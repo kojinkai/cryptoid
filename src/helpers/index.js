@@ -1,5 +1,3 @@
-// @flow
-
 const currencyMap = new Map()
 currencyMap.set('BTC', 'Bitcoin');
 currencyMap.set('ETH', 'Ethereum');

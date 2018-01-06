@@ -18,7 +18,7 @@ class Purchases extends Component {
               <span>{format(new Date(purchase.created_at), 'D')}</span>
             </div>
             <div className="purchases__amount-bought">
-              {`+${fixFloat(parseFloat(purchase.amount.amount), 10)} ${activeWalletName}`}
+              {`+${fixFloat(parseFloat(purchase.amount.amount))} ${activeWalletName}`}
             </div>
             <div className="purchases__transaction-info">
               <span className="purchases__transaction-type">
