@@ -2,6 +2,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { Wallet, ProfitProfile, Purchase } from '../../interfaces';
+import { fixFloat } from '../../helpers';
 import Indicator from '../indicator/indicator';
 import './aggregator.css';
 
@@ -25,10 +26,7 @@ class Aggregator extends Component {
       inProfit: true
     }
   }
-
-  _fixFloat(floatingNumber: number): number {
-    return Number((floatingNumber).toFixed(2));
-  }  
+ 
 
   _extractSumFromPurchases(accumulator: number, purchase: Purchase): number {
     return accumulator + parseFloat(purchase.total.amount);
@@ -40,12 +38,12 @@ class Aggregator extends Component {
     
     if (percentageFigure >= 100) {
 
-      const fixed = this._fixFloat((percentageFigure - 100));
+      const fixed = fixFloat((percentageFigure - 100));
       return `+${fixed}%`
 
     } else {
 
-      const fixed = this._fixFloat((100 - percentageFigure));
+      const fixed = fixFloat((100 - percentageFigure));
       return `-${fixed}%`
 
     }
@@ -56,7 +54,7 @@ class Aggregator extends Component {
       return this.defaults;
     }
 
-    const totalPaid  = this._fixFloat(activeWallet.purchases.reduce(this._extractSumFromPurchases, 0));
+    const totalPaid  = fixFloat(activeWallet.purchases.reduce(this._extractSumFromPurchases, 0));
     const balanceNow = parseFloat(activeWallet.balance.amount);
     const profitLoss = (balanceNow - totalPaid);    
     const percentage = this._extractPercentageGrowth(totalPaid, balanceNow);
