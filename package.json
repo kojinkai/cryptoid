@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "date-fns": "^1.29.0",
     "immutable": "^3.8.2",
     "prop-types": "^15.6.0",
     "react": "^15.5.4",

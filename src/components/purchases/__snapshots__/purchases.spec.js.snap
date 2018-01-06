@@ -1,0 +1,856 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Purchases /> should render according the snapshot 1`] = `
+ShallowWrapper {
+  "complexSelector": ComplexSelector {
+    "buildPredicate": [Function],
+    "childrenOfNode": [Function],
+    "findWhereUnwrapped": [Function],
+  },
+  "length": 1,
+  "node": <section
+    className="purchases"
+>
+    <div
+        className="purchases__purchase"
+    >
+        <div
+            className="purchases__purchase-inner"
+        >
+            <div
+                className="purchases__purchase-date"
+            >
+                <span>
+                    Jun
+                </span>
+                <span>
+                    15
+                </span>
+            </div>
+            <div
+                className="purchases__amount-bought"
+            >
+                +0.9 BTC
+            </div>
+            <div
+                className="purchases__transaction-info"
+            >
+                <span
+                    className="purchases__transaction-type"
+                >
+                    Bought Bitcoin
+                </span>
+            </div>
+            <div
+                className="purchases__amount-paid"
+            >
+                £ 225.36 paid
+            </div>
+        </div>
+    </div>
+    <div
+        className="purchases__purchase"
+    >
+        <div
+            className="purchases__purchase-inner"
+        >
+            <div
+                className="purchases__purchase-date"
+            >
+                <span>
+                    Jun
+                </span>
+                <span>
+                    15
+                </span>
+            </div>
+            <div
+                className="purchases__amount-bought"
+            >
+                +9 BTC
+            </div>
+            <div
+                className="purchases__transaction-info"
+            >
+                <span
+                    className="purchases__transaction-type"
+                >
+                    Bought Bitcoin
+                </span>
+            </div>
+            <div
+                className="purchases__amount-paid"
+            >
+                £ 2281.31 paid
+            </div>
+        </div>
+    </div>
+    <div
+        className="purchases__purchase"
+    >
+        <div
+            className="purchases__purchase-inner"
+        >
+            <div
+                className="purchases__purchase-date"
+            >
+                <span>
+                    Jun
+                </span>
+                <span>
+                    1
+                </span>
+            </div>
+            <div
+                className="purchases__amount-bought"
+            >
+                +1.17 BTC
+            </div>
+            <div
+                className="purchases__transaction-info"
+            >
+                <span
+                    className="purchases__transaction-type"
+                >
+                    Bought Bitcoin
+                </span>
+            </div>
+            <div
+                className="purchases__amount-paid"
+            >
+                £ 213.69 paid
+            </div>
+        </div>
+    </div>
+    <div
+        className="purchases__purchase"
+    >
+        <div
+            className="purchases__purchase-inner"
+        >
+            <div
+                className="purchases__purchase-date"
+            >
+                <span>
+                    May
+                </span>
+                <span>
+                    24
+                </span>
+            </div>
+            <div
+                className="purchases__amount-bought"
+            >
+                +0.31 BTC
+            </div>
+            <div
+                className="purchases__transaction-info"
+            >
+                <span
+                    className="purchases__transaction-type"
+                >
+                    Bought Bitcoin
+                </span>
+            </div>
+            <div
+                className="purchases__amount-paid"
+            >
+                £ 48.10 paid
+            </div>
+        </div>
+    </div>
+</section>,
+  "nodes": Array [
+    <section
+      className="purchases"
+>
+      <div
+            className="purchases__purchase"
+      >
+            <div
+                  className="purchases__purchase-inner"
+            >
+                  <div
+                        className="purchases__purchase-date"
+                  >
+                        <span>
+                              Jun
+                        </span>
+                        <span>
+                              15
+                        </span>
+                  </div>
+                  <div
+                        className="purchases__amount-bought"
+                  >
+                        +0.9 BTC
+                  </div>
+                  <div
+                        className="purchases__transaction-info"
+                  >
+                        <span
+                              className="purchases__transaction-type"
+                        >
+                              Bought Bitcoin
+                        </span>
+                  </div>
+                  <div
+                        className="purchases__amount-paid"
+                  >
+                        £ 225.36 paid
+                  </div>
+            </div>
+      </div>
+      <div
+            className="purchases__purchase"
+      >
+            <div
+                  className="purchases__purchase-inner"
+            >
+                  <div
+                        className="purchases__purchase-date"
+                  >
+                        <span>
+                              Jun
+                        </span>
+                        <span>
+                              15
+                        </span>
+                  </div>
+                  <div
+                        className="purchases__amount-bought"
+                  >
+                        +9 BTC
+                  </div>
+                  <div
+                        className="purchases__transaction-info"
+                  >
+                        <span
+                              className="purchases__transaction-type"
+                        >
+                              Bought Bitcoin
+                        </span>
+                  </div>
+                  <div
+                        className="purchases__amount-paid"
+                  >
+                        £ 2281.31 paid
+                  </div>
+            </div>
+      </div>
+      <div
+            className="purchases__purchase"
+      >
+            <div
+                  className="purchases__purchase-inner"
+            >
+                  <div
+                        className="purchases__purchase-date"
+                  >
+                        <span>
+                              Jun
+                        </span>
+                        <span>
+                              1
+                        </span>
+                  </div>
+                  <div
+                        className="purchases__amount-bought"
+                  >
+                        +1.17 BTC
+                  </div>
+                  <div
+                        className="purchases__transaction-info"
+                  >
+                        <span
+                              className="purchases__transaction-type"
+                        >
+                              Bought Bitcoin
+                        </span>
+                  </div>
+                  <div
+                        className="purchases__amount-paid"
+                  >
+                        £ 213.69 paid
+                  </div>
+            </div>
+      </div>
+      <div
+            className="purchases__purchase"
+      >
+            <div
+                  className="purchases__purchase-inner"
+            >
+                  <div
+                        className="purchases__purchase-date"
+                  >
+                        <span>
+                              May
+                        </span>
+                        <span>
+                              24
+                        </span>
+                  </div>
+                  <div
+                        className="purchases__amount-bought"
+                  >
+                        +0.31 BTC
+                  </div>
+                  <div
+                        className="purchases__transaction-info"
+                  >
+                        <span
+                              className="purchases__transaction-type"
+                        >
+                              Bought Bitcoin
+                        </span>
+                  </div>
+                  <div
+                        className="purchases__amount-paid"
+                  >
+                        £ 48.10 paid
+                  </div>
+            </div>
+      </div>
+</section>,
+  ],
+  "options": Object {},
+  "renderer": ReactShallowRenderer {
+    "_instance": ShallowComponentWrapper {
+      "_calledComponentWillUnmount": false,
+      "_compositeType": 0,
+      "_context": Object {},
+      "_currentElement": <Purchases
+        activeWalletName="BTC"
+        isLoading={false}
+        purchases={
+                Array [
+                        Object {
+                          "amount": Object {
+                            "amount": "0.90000000",
+                            "currency": "ETH",
+                          },
+                          "created_at": "2017-06-15T12:23:27Z",
+                          "currency": "ETH",
+                          "id": "c9c243c0-5db4-5105-baa5-10a565b2f1cf",
+                          "status": "completed",
+                          "total": Object {
+                            "amount": "225.36",
+                            "currency": "GBP",
+                          },
+                        },
+                        Object {
+                          "amount": Object {
+                            "amount": "9.00000000",
+                            "currency": "ETH",
+                          },
+                          "created_at": "2017-06-15T12:19:43Z",
+                          "currency": "ETH",
+                          "id": "ff0d9215-1643-5490-95d4-a288691a7724",
+                          "status": "completed",
+                          "total": Object {
+                            "amount": "2281.31",
+                            "currency": "GBP",
+                          },
+                        },
+                        Object {
+                          "amount": Object {
+                            "amount": "1.17000000",
+                            "currency": "ETH",
+                          },
+                          "created_at": "2017-06-01T16:18:27Z",
+                          "currency": "ETH",
+                          "id": "e4c3bdc6-c62a-50af-bf2f-24342af2a653",
+                          "status": "completed",
+                          "total": Object {
+                            "amount": "213.69",
+                            "currency": "GBP",
+                          },
+                        },
+                        Object {
+                          "amount": Object {
+                            "amount": "0.30540000",
+                            "currency": "ETH",
+                          },
+                          "created_at": "2017-05-24T12:30:06Z",
+                          "currency": "ETH",
+                          "id": "5c6fee1e-b2e4-5af3-a14e-b0c4cb3f3df5",
+                          "status": "completed",
+                          "total": Object {
+                            "amount": "48.10",
+                            "currency": "GBP",
+                          },
+                        },
+                      ]
+        }
+/>,
+      "_debugID": 1,
+      "_hostContainerInfo": null,
+      "_hostParent": null,
+      "_instance": Purchases {
+        "_reactInternalInstance": [Circular],
+        "context": Object {},
+        "props": Object {
+          "activeWalletName": "BTC",
+          "isLoading": false,
+          "purchases": Array [
+            Object {
+              "amount": Object {
+                "amount": "0.90000000",
+                "currency": "ETH",
+              },
+              "created_at": "2017-06-15T12:23:27Z",
+              "currency": "ETH",
+              "id": "c9c243c0-5db4-5105-baa5-10a565b2f1cf",
+              "status": "completed",
+              "total": Object {
+                "amount": "225.36",
+                "currency": "GBP",
+              },
+            },
+            Object {
+              "amount": Object {
+                "amount": "9.00000000",
+                "currency": "ETH",
+              },
+              "created_at": "2017-06-15T12:19:43Z",
+              "currency": "ETH",
+              "id": "ff0d9215-1643-5490-95d4-a288691a7724",
+              "status": "completed",
+              "total": Object {
+                "amount": "2281.31",
+                "currency": "GBP",
+              },
+            },
+            Object {
+              "amount": Object {
+                "amount": "1.17000000",
+                "currency": "ETH",
+              },
+              "created_at": "2017-06-01T16:18:27Z",
+              "currency": "ETH",
+              "id": "e4c3bdc6-c62a-50af-bf2f-24342af2a653",
+              "status": "completed",
+              "total": Object {
+                "amount": "213.69",
+                "currency": "GBP",
+              },
+            },
+            Object {
+              "amount": Object {
+                "amount": "0.30540000",
+                "currency": "ETH",
+              },
+              "created_at": "2017-05-24T12:30:06Z",
+              "currency": "ETH",
+              "id": "5c6fee1e-b2e4-5af3-a14e-b0c4cb3f3df5",
+              "status": "completed",
+              "total": Object {
+                "amount": "48.10",
+                "currency": "GBP",
+              },
+            },
+          ],
+        },
+        "refs": Object {},
+        "state": null,
+        "updater": Object {
+          "enqueueCallback": [Function],
+          "enqueueCallbackInternal": [Function],
+          "enqueueElementInternal": [Function],
+          "enqueueForceUpdate": [Function],
+          "enqueueReplaceState": [Function],
+          "enqueueSetState": [Function],
+          "isMounted": [Function],
+          "validateCallback": [Function],
+        },
+      },
+      "_mountOrder": 1,
+      "_pendingCallbacks": null,
+      "_pendingElement": null,
+      "_pendingForceUpdate": false,
+      "_pendingReplaceState": false,
+      "_pendingStateQueue": null,
+      "_renderedComponent": NoopInternalComponent {
+        "_currentElement": <section
+          className="purchases"
+>
+          <div
+                    className="purchases__purchase"
+          >
+                    <div
+                              className="purchases__purchase-inner"
+                    >
+                              <div
+                                        className="purchases__purchase-date"
+                              >
+                                        <span>
+                                                  Jun
+                                        </span>
+                                        <span>
+                                                  15
+                                        </span>
+                              </div>
+                              <div
+                                        className="purchases__amount-bought"
+                              >
+                                        +0.9 BTC
+                              </div>
+                              <div
+                                        className="purchases__transaction-info"
+                              >
+                                        <span
+                                                  className="purchases__transaction-type"
+                                        >
+                                                  Bought Bitcoin
+                                        </span>
+                              </div>
+                              <div
+                                        className="purchases__amount-paid"
+                              >
+                                        £ 225.36 paid
+                              </div>
+                    </div>
+          </div>
+          <div
+                    className="purchases__purchase"
+          >
+                    <div
+                              className="purchases__purchase-inner"
+                    >
+                              <div
+                                        className="purchases__purchase-date"
+                              >
+                                        <span>
+                                                  Jun
+                                        </span>
+                                        <span>
+                                                  15
+                                        </span>
+                              </div>
+                              <div
+                                        className="purchases__amount-bought"
+                              >
+                                        +9 BTC
+                              </div>
+                              <div
+                                        className="purchases__transaction-info"
+                              >
+                                        <span
+                                                  className="purchases__transaction-type"
+                                        >
+                                                  Bought Bitcoin
+                                        </span>
+                              </div>
+                              <div
+                                        className="purchases__amount-paid"
+                              >
+                                        £ 2281.31 paid
+                              </div>
+                    </div>
+          </div>
+          <div
+                    className="purchases__purchase"
+          >
+                    <div
+                              className="purchases__purchase-inner"
+                    >
+                              <div
+                                        className="purchases__purchase-date"
+                              >
+                                        <span>
+                                                  Jun
+                                        </span>
+                                        <span>
+                                                  1
+                                        </span>
+                              </div>
+                              <div
+                                        className="purchases__amount-bought"
+                              >
+                                        +1.17 BTC
+                              </div>
+                              <div
+                                        className="purchases__transaction-info"
+                              >
+                                        <span
+                                                  className="purchases__transaction-type"
+                                        >
+                                                  Bought Bitcoin
+                                        </span>
+                              </div>
+                              <div
+                                        className="purchases__amount-paid"
+                              >
+                                        £ 213.69 paid
+                              </div>
+                    </div>
+          </div>
+          <div
+                    className="purchases__purchase"
+          >
+                    <div
+                              className="purchases__purchase-inner"
+                    >
+                              <div
+                                        className="purchases__purchase-date"
+                              >
+                                        <span>
+                                                  May
+                                        </span>
+                                        <span>
+                                                  24
+                                        </span>
+                              </div>
+                              <div
+                                        className="purchases__amount-bought"
+                              >
+                                        +0.31 BTC
+                              </div>
+                              <div
+                                        className="purchases__transaction-info"
+                              >
+                                        <span
+                                                  className="purchases__transaction-type"
+                                        >
+                                                  Bought Bitcoin
+                                        </span>
+                              </div>
+                              <div
+                                        className="purchases__amount-paid"
+                              >
+                                        £ 48.10 paid
+                              </div>
+                    </div>
+          </div>
+</section>,
+        "_debugID": 2,
+        "_renderedOutput": <section
+          className="purchases"
+>
+          <div
+                    className="purchases__purchase"
+          >
+                    <div
+                              className="purchases__purchase-inner"
+                    >
+                              <div
+                                        className="purchases__purchase-date"
+                              >
+                                        <span>
+                                                  Jun
+                                        </span>
+                                        <span>
+                                                  15
+                                        </span>
+                              </div>
+                              <div
+                                        className="purchases__amount-bought"
+                              >
+                                        +0.9 BTC
+                              </div>
+                              <div
+                                        className="purchases__transaction-info"
+                              >
+                                        <span
+                                                  className="purchases__transaction-type"
+                                        >
+                                                  Bought Bitcoin
+                                        </span>
+                              </div>
+                              <div
+                                        className="purchases__amount-paid"
+                              >
+                                        £ 225.36 paid
+                              </div>
+                    </div>
+          </div>
+          <div
+                    className="purchases__purchase"
+          >
+                    <div
+                              className="purchases__purchase-inner"
+                    >
+                              <div
+                                        className="purchases__purchase-date"
+                              >
+                                        <span>
+                                                  Jun
+                                        </span>
+                                        <span>
+                                                  15
+                                        </span>
+                              </div>
+                              <div
+                                        className="purchases__amount-bought"
+                              >
+                                        +9 BTC
+                              </div>
+                              <div
+                                        className="purchases__transaction-info"
+                              >
+                                        <span
+                                                  className="purchases__transaction-type"
+                                        >
+                                                  Bought Bitcoin
+                                        </span>
+                              </div>
+                              <div
+                                        className="purchases__amount-paid"
+                              >
+                                        £ 2281.31 paid
+                              </div>
+                    </div>
+          </div>
+          <div
+                    className="purchases__purchase"
+          >
+                    <div
+                              className="purchases__purchase-inner"
+                    >
+                              <div
+                                        className="purchases__purchase-date"
+                              >
+                                        <span>
+                                                  Jun
+                                        </span>
+                                        <span>
+                                                  1
+                                        </span>
+                              </div>
+                              <div
+                                        className="purchases__amount-bought"
+                              >
+                                        +1.17 BTC
+                              </div>
+                              <div
+                                        className="purchases__transaction-info"
+                              >
+                                        <span
+                                                  className="purchases__transaction-type"
+                                        >
+                                                  Bought Bitcoin
+                                        </span>
+                              </div>
+                              <div
+                                        className="purchases__amount-paid"
+                              >
+                                        £ 213.69 paid
+                              </div>
+                    </div>
+          </div>
+          <div
+                    className="purchases__purchase"
+          >
+                    <div
+                              className="purchases__purchase-inner"
+                    >
+                              <div
+                                        className="purchases__purchase-date"
+                              >
+                                        <span>
+                                                  May
+                                        </span>
+                                        <span>
+                                                  24
+                                        </span>
+                              </div>
+                              <div
+                                        className="purchases__amount-bought"
+                              >
+                                        +0.31 BTC
+                              </div>
+                              <div
+                                        className="purchases__transaction-info"
+                              >
+                                        <span
+                                                  className="purchases__transaction-type"
+                                        >
+                                                  Bought Bitcoin
+                                        </span>
+                              </div>
+                              <div
+                                        className="purchases__amount-paid"
+                              >
+                                        £ 48.10 paid
+                              </div>
+                    </div>
+          </div>
+</section>,
+      },
+      "_renderedNodeType": 0,
+      "_rootNodeID": 0,
+      "_topLevelWrapper": null,
+      "_updateBatchNumber": null,
+      "_warnedAboutRefsInRender": false,
+    },
+    "getRenderOutput": [Function],
+    "render": [Function],
+  },
+  "root": [Circular],
+  "unrendered": <Purchases
+    activeWalletName="BTC"
+    isLoading={false}
+    purchases={
+        Array [
+            Object {
+              "amount": Object {
+                "amount": "0.90000000",
+                "currency": "ETH",
+              },
+              "created_at": "2017-06-15T12:23:27Z",
+              "currency": "ETH",
+              "id": "c9c243c0-5db4-5105-baa5-10a565b2f1cf",
+              "status": "completed",
+              "total": Object {
+                "amount": "225.36",
+                "currency": "GBP",
+              },
+            },
+            Object {
+              "amount": Object {
+                "amount": "9.00000000",
+                "currency": "ETH",
+              },
+              "created_at": "2017-06-15T12:19:43Z",
+              "currency": "ETH",
+              "id": "ff0d9215-1643-5490-95d4-a288691a7724",
+              "status": "completed",
+              "total": Object {
+                "amount": "2281.31",
+                "currency": "GBP",
+              },
+            },
+            Object {
+              "amount": Object {
+                "amount": "1.17000000",
+                "currency": "ETH",
+              },
+              "created_at": "2017-06-01T16:18:27Z",
+              "currency": "ETH",
+              "id": "e4c3bdc6-c62a-50af-bf2f-24342af2a653",
+              "status": "completed",
+              "total": Object {
+                "amount": "213.69",
+                "currency": "GBP",
+              },
+            },
+            Object {
+              "amount": Object {
+                "amount": "0.30540000",
+                "currency": "ETH",
+              },
+              "created_at": "2017-05-24T12:30:06Z",
+              "currency": "ETH",
+              "id": "5c6fee1e-b2e4-5af3-a14e-b0c4cb3f3df5",
+              "status": "completed",
+              "total": Object {
+                "amount": "48.10",
+                "currency": "GBP",
+              },
+            },
+          ]
+    }
+/>,
+}
+`;

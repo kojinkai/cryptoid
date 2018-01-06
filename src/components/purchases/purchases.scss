@@ -1,0 +1,29 @@
+@import 'styles/colors';
+@import 'styles/grid';
+@import 'styles/breakpoints';
+
+.purchases {
+
+  background: $white;
+
+  &__purchase {
+    border: solid $uiborder;
+    border-width: 1px 0 0;
+
+    &__first-child {
+      border-top: 0;
+    }
+  }
+
+  &__purchase-inner {
+    @include container(1rem, 1rem);
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__purchase-date {
+    display: flex;
+    flex-direction: column;
+  }  
+}

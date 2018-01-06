@@ -1,9 +1,12 @@
 import { componentFactory } from '../../test/helpers';
+import wallets from '../../test/mocks/wallets';
 import App from './App';
 
 const createComponentWithProps = componentFactory(App, {
   switchWallet: jest.fn(),
   getAccountData: jest.fn(),
+  activeWallet: wallets[0],
+  isLoading: false,
 });
 
 describe('<App />', () => {
